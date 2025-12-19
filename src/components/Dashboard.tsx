@@ -6,7 +6,7 @@ import type { Task, ActionResult } from '@/lib/types';
 import { CommandForm } from '@/components/CommandForm';
 import { ActionResultCard } from '@/components/ActionResultCard';
 import { AutomationCard } from '@/components/AutomationCard';
-import { TaskList } from '@/components/TaskList';
+import { CalendarView } from '@/components/CalendarView';
 import { handleUserCommand, triggerAutoReschedule, triggerEmailReminder } from '@/app/actions';
 
 export function Dashboard() {
@@ -74,7 +74,7 @@ export function Dashboard() {
         </div>
       }
       <div className="mt-8">
-        <TaskList tasks={tasks} />
+        <CalendarView tasks={tasks} />
       </div>
     </div>
   );
