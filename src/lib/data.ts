@@ -1,14 +1,23 @@
 import type { Task } from '@/lib/types';
 
-const now = new Date();
+// Use a fixed date for "now" to ensure consistent values between server and client
+const now = new Date('2024-07-26T10:00:00.000Z');
+
 const tomorrow = new Date(now);
 tomorrow.setDate(now.getDate() + 1);
+tomorrow.setHours(14, 0, 0, 0);
+
 const yesterday = new Date(now);
 yesterday.setDate(now.getDate() - 1);
+yesterday.setHours(9, 30, 0, 0);
+
 const twoDaysAgo = new Date(now);
 twoDaysAgo.setDate(now.getDate() - 2);
+twoDaysAgo.setHours(16, 0, 0, 0);
+
 const nextWeek = new Date(now);
 nextWeek.setDate(now.getDate() + 7);
+nextWeek.setHours(11, 0, 0, 0);
 
 export const initialTasks: Task[] = [
   { id: '1', description: 'Submit Q3 financial report', dueDate: tomorrow, status: 'pending', priority: 'high' },
